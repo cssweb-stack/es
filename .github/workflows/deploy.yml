@@ -1,0 +1,63 @@
+name: Build and publish ES
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      SHARED_SOURCE: ${{ github.workspace }}/.shared-source
+    steps:
+      - name: Checkout unit site
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Read shared repository settings
+        id: shared
+        run: node scripts/shared-settings.mjs >> "$GITHUB_OUTPUT"
+      - name: Checkout authoritative shared source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.shared.outputs.repository }}
+          ref: ${{ steps.shared.outputs.ref }}
+          path: .shared-source
+          persist-credentials: false
+      - name: Validate shared source
+        run: npm --prefix .shared-source run check
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build from unit and shared sources
+        run: npm run build
+        env:
+          SITE_PATH_PREFIX: /es/
+          SITE_ORIGIN: https://cssweb-stack.github.io
+      - name: Record shared revision
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const state = JSON.parse(fs.readFileSync(".shared-state.json", "utf8")); fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, "Shared source: " + state.repository + "\n\nCommit: `" + state.commit + "`\n");'
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

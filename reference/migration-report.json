@@ -1,0 +1,33 @@
+{
+  "source": "departmentofethnicstudies.WordPress.2026-11-11.xml",
+  "sha256": "40216f5a1f9b137a06e3d595b7bb95134d32837445a0295096ba76ed8aa9cb63",
+  "pages": 26,
+  "faculty": 9,
+  "sourceImagesOmitted": [
+    "http://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2022/06/george-hall.jpg",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/02/ap-01-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/02/comg1-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/02/comg2-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/05/esdept_logo-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/05/essa-fb-1024x263.png",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/05/essa-logo-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/05/ic.png",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/05/yt_logo_rgb_light.png",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/06/COH-Logo-Circle.svg",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/11/es-slide-01-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/11/es-slide-02-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/11/es-slide-03-jpg.webp",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2023/12/esl.png",
+    "https://ethnicstudies.manoa.hawaii.edu/wp-content/uploads/2025/10/Anoilani-Aga.avif"
+  ],
+  "retainedExternalLinks": [
+    "mailto:anoilani@hawaii.edu",
+    "mailto:aoude@hawaii.edu",
+    "mailto:davianna@hawaii.edu",
+    "mailto:esdept@hawaii.edu",
+    "mailto:noelk@hawaii.edu",
+    "mailto:okamuraj@hawaii.edu",
+    "mailto:rrath@hawaii.edu"
+  ],
+  "unmappedPages": []
+}

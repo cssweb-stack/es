@@ -1,0 +1,21 @@
+{
+  "name": "es",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --port=8088",
+    "build": "eleventy",
+    "clean": "node -e \"import('node:fs').then(fs=>fs.rmSync('_site',{recursive:true,force:true}))\"",
+    "shared:check": "node scripts/shared-source.mjs",
+    "verify": "python3 scripts/verify-site.py"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "esbuild": "^0.28.2",
+    "nunjucks": "npm:@11ty/nunjucks@^3.3.0"
+  },
+  "overrides": {
+    "@11ty/chokidar-with-glob-support": "npm:chokidar@3.6.0"
+  }
+}

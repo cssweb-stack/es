@@ -1,0 +1,5 @@
+node_modules/
+_site/
+.shared-source/
+.shared-state.json
+.DS_Store
