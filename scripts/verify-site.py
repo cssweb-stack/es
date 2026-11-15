@@ -85,6 +85,8 @@ expected={url.replace('/about-es/', '/about/'): body for url,body in expected.it
 # Department News was explicitly retired; original export/snapshot remain evidence.
 expected.pop('/department-news.html',None)
 for url,source in expected.items():
+    # Approved associated-list separator correction; original snapshot stays intact.
+    if url=='/faculty/associated.html':source=source.replace(' - ', ': ')
     if url=='/':
         source=re.sub(r'<p\b[^>]*>Find us on:</p>','',source)
         source=re.sub(r'<h2\b[^>]*>Department News</h2>','',source)
@@ -215,5 +217,13 @@ for person in faculty:
 expected_pages=sum(bool(re.search(r'^permalink:',p.read_text(),re.M)) for p in (ROOT/'src').rglob('*.html'))
 if len(faculty)!=9 or len(pages)!=expected_pages:errors.append('Unexpected page/faculty count')
 if not (ROOT/'src/courses.html').is_file() or (ROOT/'src/courses').exists() or (OUT/'courses/index.html') in pages:errors.append('Courses must use root courses.html; legacy folder may contain only a generated redirect')
+# Editorial rules must inspect rendered shared-template output as well as page source.
+courses_html=(OUT/'courses.html').read_text()
+if '<h1>Ethnic Studies Courses</h1>' not in courses_html:errors.append('Courses H1 must spell out Ethnic Studies Courses')
+associated_html=(OUT/'faculty/associated.html').read_text()
+for group in json.loads((UNIT/'associated-faculty.json').read_text())['groups']:
+    for member in group['members']:
+        description=member.get('description','')
+        if description and ': '+description not in associated_html:errors.append(member['name']+': faculty description must use colon separator')
 if errors:print('\n'.join(errors));sys.exit(1)
 print(f'Checked {len(pages)} pages, {len(redirect_files)} redirects, 9 shared faculty bios, {len(expected)} preserved content bodies, links/assets/anchors, metadata, and heroes. Prefix: {prefix or "/"}.')
