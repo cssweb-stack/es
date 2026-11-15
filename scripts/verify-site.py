@@ -80,6 +80,8 @@ for f,p in pages.items():
         if not target.exists():errors.append(rel+': missing '+v)
         elif u.fragment and target in pages and unquote(u.fragment) not in pages[target].ids:errors.append(rel+': missing anchor '+v)
 expected=json.loads((ROOT/'reference/preserved-content.json').read_text())
+# Preserve the original snapshot; map the approved About directory rename.
+expected={url.replace('/about-es/', '/about/'): body for url,body in expected.items()}
 # Department News was explicitly retired; original export/snapshot remain evidence.
 expected.pop('/department-news.html',None)
 for url,source in expected.items():
@@ -98,21 +100,21 @@ for url,source in expected.items():
     if url=='/support-es.html':source=source.replace('We sincerely appreciate contributions of any size.','Contributions of any size are sincerely appreciated.')
     # Approved Island Connections simplification: preserve archive/watch links;
     # provider, host and schedule details are delegated to UH Online.
-    if url=='/about-es/island-connections.html':
+    if url=='/about/island-connections.html':
         # Approved resource labels/order; original destinations remain required below.
         source=re.sub(r'<p\b[^>]*>(?:(?!</p>).)*?Island Connections Show Archive(?:(?!</p>).)*?</p>','',source,flags=re.S)
         source=re.sub(r'<p\b[^>]*><a[^>]*>Watch Island Connections</a>\s*</p>','',source,flags=re.S)
-        island_output=(OUT/'about-es/island-connections.html').read_text()
+        island_output=(OUT/'about/island-connections.html').read_text()
         for destination in ['https://www.youtube.com/@UHManoaEthnicStudies/videos','https://docs.google.com/spreadsheets/d/1ujlgoZ0iPZ7Nhdho2kTmwnMqaIUAYKfiSeOuqO-IKhM/edit?usp=share_link']:
             if destination not in island_output:errors.append('Island Connections: missing archive/watch destination')
         source=re.sub(r'<p\b[^>]*>Island Connections is.*?</p>','',source,flags=re.S)
         source=re.sub(r'<ul\b[^>]*>.*?</ul>','',source,count=1,flags=re.S)
         source=re.sub(r'<p\b[^>]*>Island Connections is rebroadcasted.*?</p>','',source,flags=re.S)
     # ESSA is defined once in the H1, then used in the intro; unused ES removed.
-    if url=='/about-es/ethnic-studies-student-association.html':
+    if url=='/about/ethnic-studies-student-association.html':
         source=source.replace('The Ethnic Studies Student Association (ESSA)','ESSA').replace('ethnic studies (ES) courses','ethnic studies courses')
     # Approved third-person intro and removal of the four degree-link paragraphs.
-    if url=='/about-es/why-study-es.html':
+    if url=='/about/why-study-es.html':
         source=source.replace('We are dedicated','The Department of Ethnic Studies is dedicated').replace('Our academic program','Its academic program').replace('we promote','the department promotes').replace('our academic program','the academic program').replace('our students','students')
         for label in ['Undergraduate Certificate in Ethnic Studies','Bachelor of Arts (BA) in Ethnic Studies','Bachelor’s &amp; Master’s (BAM) Pathways','Double Major Options']:
             source=re.sub(r'<p\b[^>]*>(?:(?!</p>).)*?'+re.escape(label)+r'(?:(?!</p>).)*?</p>','',source,flags=re.S)
@@ -124,12 +126,12 @@ for url,source in expected.items():
         source=source.replace(' (COH)','')
         source=re.sub(r'<p\b[^>]*>(?:(?!</p>).)*?Visit the (?:(?!</p>).)*?</p>','',source,flags=re.S)
     # Approved descriptive H1 cleanup; full source body remains checked.
-    if url=='/about-es/why-study-es.html':source=source.replace('Why Study ES','Why Study Ethnic Studies?')
-    if url=='/about-es/our-history-our-way.html':source=source.replace('Our History - Our Way','Our History, Our Way')
+    if url=='/about/why-study-es.html':source=source.replace('Why Study ES','Why Study Ethnic Studies?')
+    if url=='/about/our-history-our-way.html':source=source.replace('Our History - Our Way','Our History, Our Way')
     rel='index.html' if url=='/' else url.lstrip('/')+'index.html' if url.endswith('/') else url.lstrip('/')
     out=''.join(pages[OUT/rel].parts);cursor=0
     source_parts=scan(source,reviewed=True).parts
-    if url=='/about-es/why-study-es.html':
+    if url=='/about/why-study-es.html':
         # Existing outcomes moved intact to a dedicated page linked from BA.
         start=source_parts.index('StudentLearningOutcomes')
         outcomes_output=''.join(pages[OUT/'undergraduate/student-learning-outcomes.html'].parts)
@@ -146,7 +148,7 @@ for url,source in expected.items():
             source_parts[group_index-1:group_index+1]=['Group'+str(group),description,credit]
         source_parts=[v for v in source_parts if v not in {'Seethe','UHCatalog','formoreinformation.'}]
         start=source_parts.index('SkillsandKnowledge');end=source_parts.index('HowtoApply')
-        why_output=''.join(pages[OUT/'about-es/why-study-es.html'].parts)
+        why_output=''.join(pages[OUT/'about/why-study-es.html'].parts)
         for moved_chunk in source_parts[start:end]:
             if moved_chunk not in why_output:errors.append('Why Study ES: missing moved certificate text '+moved_chunk[:70])
         source_parts=source_parts[:start]+source_parts[end:]
@@ -158,7 +160,7 @@ for url,source in expected.items():
     if url=='/undergraduate/major-ba.html':
         start=source_parts.index('SkillsandKnowledge')
         end=source_parts.index('StudentsinterestedinmajoringshouldcontactanEthnicStudiesundergraduateadvisor:')
-        why_output=''.join(pages[OUT/'about-es/why-study-es.html'].parts).lower()
+        why_output=''.join(pages[OUT/'about/why-study-es.html'].parts).lower()
         for moved_chunk in source_parts[start:end]:
             # Existing certificate copy differs only in capitalization and skill/skills.
             if moved_chunk.lower().replace('theskillandknowledge','theskillsandknowledge') not in why_output:errors.append('Why Study ES: missing BA skills/career text '+moved_chunk[:70])
