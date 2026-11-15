@@ -1,10 +1,37 @@
 ---
 layout: shell.njk
-title: "Department News"
-description: "This will be the meta description."
+title: "News and Updates"
+searchTitle: "News and Updates"
+description: "Instagram updates and profile links from the Department of Ethnic Studies at the University of Hawaiʻi at Mānoa."
 permalink: "/department-news.html"
 ---
-<div class="page-section"><div class="container content-section"><div class="row gx-0 gx-sm-5 gx-lg-5"><div class="col-12">
-<h1>Department News</h1><p>Explore news and announcements from the Department of Ethnic Studies.</p>
-<h2></h2>
-</div></div></div></div>
+<div class="page-section">
+<div class="container content-section">
+<div class="row gx-0 gx-sm-5 gx-lg-5">
+<div class="col-12">
+<h1>News and Updates</h1>
+<p>Follow the Department of Ethnic Studies on Instagram.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="page-section page-section--gray">
+<div class="container content-section">
+<div class="row gx-0 gx-sm-5 gx-lg-5">
+<div class="col-12">
+<h2>Instagram</h2>
+{% for account in social.links %}
+{% if account.label == "Instagram" and account.url %}
+<div class="instagram-profile">
+<blockquote class="instagram-media" data-instgrm-permalink="{{ account.url | escape }}" data-instgrm-version="14">
+<p><a href="{{ account.url | escape }}">View Ethnic Studies on Instagram</a></p>
+</blockquote>
+</div>
+<p><a href="{{ account.url | escape }}">Visit Ethnic Studies on Instagram</a>.</p>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+<script async src="https://www.instagram.com/embed.js"></script>

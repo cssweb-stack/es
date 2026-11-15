@@ -1,11 +1,28 @@
 ---
 layout: shell.njk
 title: "Contact ES"
-description: "This will be the meta description."
+searchTitle: "Contact"
+description: "Contact the UH Mānoa Department of Ethnic Studies for office hours, George Hall directions, undergraduate advising, and key faculty and staff contacts."
 permalink: "/contact.html"
 ---
-<div class="page-section"><div class="container content-section"><div class="row gx-0 gx-sm-5 gx-lg-5"><div class="col-12">
-<h1>Contact ES</h1><p>We are open Monday–Friday from 8 am to 4:30 pm. We are closed on weekends and all <a href="https://www.hawaii.edu/academic-calendar/">state holidays</a>
-.</p>
-</div></div></div></div>
-<div class="page-section"><div class="container content-section">{% include "layouts/content/unit-contact.njk" %}</div></div>
+<div class="page-section">
+<div class="container content-section">
+<div class="row gx-0 gx-sm-5 gx-lg-5">
+<div class="col-12">
+<h1>Contact ES</h1>
+<p>The department office is open Monday–Friday from 8 am to 4:30 pm. It is closed on weekends and all <a href="https://www.hawaii.edu/academic-calendar/">state holidays</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="page-section page-section--gray">
+<div class="container content-section">
+{% include "layouts/content/unit-contact.njk" %}
+</div>
+</div>
+<div class="page-section">
+<div class="container content-section">
+{% set directoryPeople = key_contacts %}
+{% include "layouts/profiles/people-grid.njk" %}
+</div>
+</div>

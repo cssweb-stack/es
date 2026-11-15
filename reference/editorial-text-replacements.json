@@ -1,0 +1,47 @@
+[
+  {
+    "page": "index.html",
+    "before": "E komo mai — Welcome to the Department of Ethnic Studies within the College of Social Sciences at the University of Hawaiʻi at Mānoa. The department provides a home for students eager to learn the skills required to create meaningful change toward a more just future for their communities. The department’s globally recognized faculty draw on their extensive expertise and experience in facilitating brave spaces to learn together and respond to the critical challenges of the moment. The department encourages students to approach identities and institutions through interdisciplinary and transformative frameworks. Students are empowered to apply academic knowledge beyond the classroom, cultivating practical and creative leadership skills to change the world for the better!",
+    "after": "E komo mai — Welcome to the Department of Ethnic Studies within the College of Social Sciences at the University of Hawaiʻi at Mānoa. Students find a home for developing the knowledge and skills to create meaningful change toward a more just future for their communities. Globally recognized faculty bring extensive expertise and experience to shared learning and critical questions about identities and institutions. Through interdisciplinary study and community engagement, students apply academic knowledge beyond the classroom and develop practical, creative leadership skills."
+  },
+  {
+    "page": "faculty/index.html",
+    "before": "Our faculty brings expertise in local, national, and global political and economic trends, with a focus on the intersections of race, class, ethnicity, gender, and indigeneity. Through research, teaching, and community engagement, we examine critical issues such as power, identity, social justice, and decolonial practices. By advising and mentoring students, our faculty train a new generation of critical thinkers and compassionate community leaders, prepared to tackle the complex challenges of today’s world.",
+    "after": "Ethnic Studies faculty bring expertise in local, national, and global political and economic trends, with a focus on the intersections of race, class, ethnicity, gender, and indigeneity. Their research, teaching, and community engagement address questions of power, identity, social justice, and decolonial practices. Through advising and mentoring, faculty help students develop as critical thinkers and compassionate community leaders prepared to address complex challenges."
+  },
+  {
+    "page": "about-es/why-study-es.html",
+    "before": "The Department of Ethnic Studies is dedicated to fostering a deeper understanding of race, ethnicity, and social justice through interdisciplinary and engaged scholarship. Its academic program equips students with critical thinking and analytical skills necessary to address complex issues of power, identity, and inequality. Grounded in both local and global contexts, the department promotes meaningful engagement with diverse communities, preparing students to become leaders and advocates for positive social change. Ultimately, the academic program aims to change the way students view the world.",
+    "after": "Ethnic Studies connects the study of race and ethnicity with questions of power, identity, inequality, and social justice. Interdisciplinary research and engaged scholarship help students develop critical thinking and analytical skills, connect local and global perspectives, and engage with diverse communities. These approaches support leadership, advocacy, and new ways of understanding the world."
+  },
+  {
+    "page": "about-es/our-history-our-way.html",
+    "before": "Out of the turbulent 1960s, our program emerged from the national Civil Rights, Anti-Vietnam War, Ethnic Empowerment, and Students' Rights movements. In Hawaiʻi, ethnic studies played a pivotal role in faculty and student involvement in key land struggles such as Kalama Valley, Waiahole-Waikane, Kahoʻolawe, and Chinatown. Once established, we became a platform for learning, research, and community service, centering on indigeneity, race, class, gender, and social justice, all deeply connected to Hawaiʻi’s vibrant and multiethnic communities.",
+    "after": "The program emerged from the national civil rights, anti-Vietnam War, ethnic empowerment, and students’ rights movements of the 1960s. In Hawaiʻi, ethnic studies played a pivotal role in faculty and student involvement in land struggles such as Kalama Valley, Waiahole-Waikane, Kahoʻolawe, and Chinatown. Once established, the program became a platform for learning, research, and community service focused on indigeneity, race, class, gender, and social justice, with deep connections to Hawaiʻi’s multiethnic communities."
+  },
+  {
+    "page": "center-for-oral-history.html",
+    "before": "We collect, document, preserve, and highlight the recollections of Native Hawaiians and the multi-ethnic people of Hawaiʻi. We produce oral histories and interpretive historical materials about lifeways, key historical events, social movements, and Hawaiʻi’s role in the globalizing world, for the widest possible use. We develop books, articles, podcasts, and videos based on oral histories, serve as a resource center for oral history materials, and train groups and individuals in oral history research.",
+    "after": "The center collects, documents, preserves, and highlights the recollections of Native Hawaiians and the multiethnic people of Hawaiʻi. Its oral histories and interpretive materials document lifeways, historical events, social movements, and Hawaiʻi’s role in a globalizing world. Books, articles, podcasts, and videos make these histories available for broad use. The center also serves as a resource for oral history materials and trains groups and individuals in oral history research."
+  },
+  {
+    "page": "about-es/ethnic-studies-student-association.html",
+    "before": "ESSA is a non-profit organization based at the University of Hawaiʻi at Mānoa.  Our central goal is to create an open dialogue about culture, identity, and socio-political issues that are explored in ethnic studies courses and in life. ESSA takes a critical stance against racism, sexism, homophobia, classism, and the systematic marginalization of people of color.",
+    "after": "ESSA is a nonprofit organization based at the University of Hawaiʻi at Mānoa. Its central goal is to create an open dialogue about culture, identity, and sociopolitical issues explored in ethnic studies courses and in life. The association takes a critical stance against racism, sexism, homophobia, classism, and the systematic marginalization of people of color."
+  },
+  {
+    "page": "about-es/ethnic-studies-student-association.html",
+    "before": "To accomplish our goals and to better connect with students and the community, we have chosen a variety of artists across all disciplines to function as our mouthpiece. In past years, ESSA has hosted concerts and events featuring politically conscious artists whose artwork and methods of expression center on identity formation, culture, and socio-political issues.  We wish to provide a safe and supportive atmosphere where artists can showcase their own talent, find their own voice, and inspire others in the process.",
+    "after": "ESSA has worked with artists across disciplines to connect students and community members through creative expression. Past concerts and events have featured politically conscious artists whose work centers on identity formation, culture, and sociopolitical issues. The association seeks to provide a safe and supportive atmosphere where artists can showcase their talent, find their voice, and inspire others."
+  },
+  {
+    "page": "support-es.html",
+    "before": "Please consider supporting our cause by making a donation that will help sustain community activities, foster academic development, promote educational initiatives, and/or empower students to engage in impactful research.",
+    "after": "Contributions to the Department of Ethnic Studies help sustain community activities, foster academic development, support educational initiatives, and enable students to engage in research."
+  },
+  {
+    "page": "contact.html",
+    "before": "We are open Monday–Friday from 8 am to 4:30 pm. We are closed on weekends and all ",
+    "after": "The department office is open Monday–Friday from 8 am to 4:30 pm. It is closed on weekends and all "
+  }
+]
